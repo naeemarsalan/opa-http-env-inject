@@ -41,12 +41,37 @@ create-service() {
 }
 
 
-main() {
+deploy() {
     create-ns
     setup-sa
     create-mutationwebhook
     create-configmap
     create-deployment
+    create-service
 }
 
-main
+cleanup() {
+  kubectl delete ns/demo-mutate
+  kubectl delete MutatingWebhookConfiguration/mutate-example-admission-controller
+}
+
+helpmenu() {
+  echo "Run --deploy to install"
+  echo "Run --cleanup to uninstall"
+}
+
+
+while [ ! $# -eq 0 ]
+do
+	case "$1" in
+		--cleanup)
+			cleanup
+			exit
+			;;
+		--deploy)
+			deploy
+			exit
+			;;
+	esac
+	shift
+done
