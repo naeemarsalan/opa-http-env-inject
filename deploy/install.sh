@@ -37,6 +37,10 @@ create-deployment() {
     kubectl apply -f kube/deployment.yaml
 }
 
+create-service() {
+    kubectl apply -f kube/service.yaml
+}
+
 
 main() {
     create-ns
