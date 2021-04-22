@@ -9,8 +9,14 @@ https://github.com/open-policy-agent/gatekeeper/milestone/9
 `deploy/kube/mutate.rego`
 
 ## To install Mutating Webhook Run the following Script
-`./deploy/install.sh`
+`./deploy/install.sh --deploy`
 
+## To deploy changes for mutate.rego after deploy run --update-configmap
+`./deploy/install.sh --update-configmap`
+
+
+## To uninstall Mutating Webhook Run the following Script
+`./deploy/install.sh --cleanup`
 ## How to use:
 To enable kubernetes resource to have enviroment variables you will have to add annotation:
 `kubectl annotate deployment nginx http-proxy=true -n demo-mutate`
