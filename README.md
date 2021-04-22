@@ -19,7 +19,7 @@ https://github.com/open-policy-agent/gatekeeper/milestone/9
 `./deploy/install.sh --cleanup`
 ## How to use:
 To enable kubernetes resource to have enviroment variables you will have to add annotation:
-`kubectl annotate deployment nginx http-proxy=true -n demo-mutate`
+`kubectl create deply nginx --image=nginx && kubectl annotate deployment nginx http-proxy=true `
 
 
 
