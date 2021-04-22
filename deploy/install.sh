@@ -1,5 +1,4 @@
-
-
+#!/bin/bash
 setup-sa() {
     bash ./script/webhook-create-signed-cert.sh --service mutate-example --namespace demo-mutate --secret mutate-example-tls
 }
