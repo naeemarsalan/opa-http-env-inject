@@ -13,7 +13,7 @@ create-configmap() {
 }
 
 create-mutationwebhook() {
-cat <<EOF >>
+cat <<EOF | kubectl apply -f -
 apiVersion: admissionregistration.k8s.io/v1beta1
 kind: MutatingWebhookConfiguration
 metadata:
